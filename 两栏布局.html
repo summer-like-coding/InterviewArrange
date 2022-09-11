@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双栏布局</title>
+    <style>
+        /* .content{
+            height: 600px;
+        }
+        .left{
+            float: left;
+            height: 100%;
+            width: 200px;
+            background-color: brown;
+        }
+        .right{
+            height: 100%;
+            background-color: aquamarine;
+        } */
+        /* 使用flex布局 */
+        /* .content{
+            display: flex;
+            height: 600px;
+        }
+        .left{
+            width: 200px;
+            background-color: aqua;
+        }
+        .right{
+            height: 100%;
+            这是为了让他排在后面
+            flex: 1;
+            background-color: bisque;
+        } */
+        /* 使用grid布局 */
+        .content{
+            display: grid;
+            grid-template-rows: 300px 300px;
+            grid-template-columns: 200px auto;
+            grid-gap: 10px 20px;
+        }
+        .left{
+            background-color: beige;
+        }
+        .right{
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="left">
+            hellonihaoya
+        </div>
+        <div class="right">
+            aaaaaaaaaaaa
+        </div>
+    </div>
+</body>
+</html>

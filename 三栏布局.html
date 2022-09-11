@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三栏布局</title>
+    <style>
+       /* 我们用这种方式实现1的话，我们的中间的medium应该反正放在最后面，不可以放在中间，不然会引起right下移 */
+        /* .content{
+            width: 900px;
+            height: 600px;
+            margin: 10px;
+            padding: 10px;
+            background-color: cadetblue;
+            overflow: hidden;
+        }
+        .left{
+            float: left;
+            width: 100px;
+            height: 100%;
+            background-color: aqua;
+        }
+        .right{
+            width: 100px;
+            height: 100%;
+            float: right;
+            background-color: bisque;
+        }
+        .medium{
+            background-color: azure;
+            height: 100%;
+            margin-left:110px;
+            margin-right: 110px;
+        } */
+        /* 左右两边设置absolue，中间设置margin */
+        /* 同样的，我的中间放在后面，right应该放在中间
+         */
+        /* .content{
+            position: relative;
+            width: 900px;
+            height: 600px;
+            background-color: cadetblue;
+            
+        }
+        .left{
+            position: absolute;
+            width: 100px;
+            height: 100%;
+            left: 0;
+         
+            background-color: aqua;
+        }
+        .right{
+            position: absolute;
+            width: 100px;
+            height: 100%;
+            right: 0;
+         
+            background-color: bisque;
+        }
+        .medium{
+            margin-left: 110px;
+            background-color: azure;
+            height: 100%;
+            margin-right: 110px;
+            
+        } */
+        /* 使用flex布局，需要我们将原来的布局调整回来，就是将medium放在中间 */
+        /* 同时我们需要用justify-content */
+        /* 为此我们每个页面其实都需要设置宽度，否则宽度大小就是里面行内元素的大小 */
+        /* .content{
+            display: flex;
+            width: 600px;
+            height: 100px;
+            background-color: cadetblue;
+            justify-content: space-around;
+        }
+        .left{
+            background-color: aqua;
+            width: 100px;
+            height: 100%;
+        
+        }
+        .right{
+            width: 100px;
+            height: 100%;
+            background-color: bisque;
+        }
+        .medium{
+            width: 100%;
+            margin: 0 10px;
+            background-color: azure
+        } */
+
+        /* 我们使用grid布局 */
+        .content{
+            display: grid;
+            grid-template-columns: 200px auto 200px;
+            /* 一排，400 */
+            grid-template-rows: 400px;
+            grid-gap: 10px 20px;
+        }
+        .left{
+            background-color: bisque;
+        }
+        .right{
+            background-color: brown;
+        }
+        .medium{
+            background-color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="left">hello</div>
+        <div class="medium">你好</div>
+        <div class="right">sx</div>
+        
+    </div>
+</body>
+
+</html>

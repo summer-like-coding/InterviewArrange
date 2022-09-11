@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>柯里化函数</title>
+</head>
+
+<body>
+    <script>
+        function getArea(width) {
+            return height=>{return height*width} 
+        }
+
+        const getTenWidthArea = getArea(10)
+        // 之后碰到宽度为10的长方形就可以这样计算面积
+        const area1 = getTenWidthArea(20)
+
+        // 而且如果遇到宽度偶尔变化也可以轻松复用
+        const getTwentyWidthArea = getArea(20)
+        const area2 = getTenWidthArea(30)
+        console.log(area1);
+        console.log(area2);
+        
+    </script>
+</body>
+
+</html>
