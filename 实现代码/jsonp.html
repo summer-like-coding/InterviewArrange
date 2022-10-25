@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <title>Jsonpc测试</title>
+</head>
+
+<body>
+    <!-- <script src="https://www.zhihu.com/people/zhystar/posts"></script> -->
+    <!-- 用ajax发送请求 -->
+    <script>
+        // $.ajax({
+        //     url: "https://www.zhihu.com/people/zhystar/posts", success: function () {
+        //         console.log("success")
+        //     }
+        // })
+        function callback(data){
+            return data
+        }
+        $.ajax({
+            type:'get',
+            // url:'http://192.168.171.220:8080/jsonp.js',
+            url:'http://192.168.171.220:8080/promise.js',
+            // dataType:'jsonp',
+            // jsonp:"callbackparam",
+            // jsonpCallback:'callback',
+            success:function(data){
+                console.log("成功",data)
+            },
+            error:(err)=>{
+                console.log("失败",err)
+            }
+        })
+    </script>
+    <!-- <script src="http://192.168.171.220:8080/jsonp.js"></script> -->
+</body>
+
+</html>
